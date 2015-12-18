@@ -1,1 +1,1 @@
-git clone https://github.com/mhsjlw/flying-squid.git
+git clone https://github.com/PrismarineJS/flying-squid.git
