@@ -1,6 +1,11 @@
 #!/bin/bash
-
-cd `dirname $0`
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $dir
+if [ -a .installing ]
+then
+exit 0
+fi
+touch .installing
 cd flying-squid
 status=`git pull`
 echo $status
@@ -14,3 +19,5 @@ then
 	if [[ "$pid" != "" ]] ; then kill ${pid} ; fi
 	screen -S flying-squid -d -m ../start.sh
 fi
+cd $dir
+rm .installing
