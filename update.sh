@@ -15,7 +15,7 @@ then
 	echo "installing and starting "
 	echo "status: $status"
 	echo "pid: $pid"
-	npm install
+	npm install && npm update && npm install flying-squid-irc && node_modules/.bin/require-self
 	if [[ "$pid" != "" ]] ; then kill ${pid} ; fi
 	screen -S flying-squid -d -m ../start.sh
 fi
